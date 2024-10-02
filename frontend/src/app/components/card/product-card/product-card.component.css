@@ -1,0 +1,7 @@
+.truncate-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Số dòng hiển thị tối đa */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

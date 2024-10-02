@@ -1,0 +1,43 @@
+<nav
+  class="w-full flex justify-between items-center p-5 bg-indigo-500 shadow-lg"
+>
+  <div class="logo">
+    <span
+      routerLink="/home"
+      class="text-gray-200 text-4xl cursor-pointer flex justify-start items-center"
+      >SHOP</span
+    >
+  </div>
+  <div class="nav-items">
+    <!-- Nếu chưa đăng nhập, hiển thị Login và Register -->
+    <ng-container *ngIf="!isLoggedIn">
+      <span
+        routerLink="/login"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200"
+        >Login</span
+      >
+      <span
+        routerLink="/register"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200"
+        >Register</span
+      >
+    </ng-container>
+
+    <!-- Nếu đã đăng nhập, hiển thị Logout -->
+    <ng-container *ngIf="isLoggedIn">
+      <span
+        (click)="logout()"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200"
+        >Logout</span
+      >
+
+      <!-- Chỉ admin mới thấy Admin -->
+      <span
+        *ngIf="isAdmin$ | async"
+        routerLink="/admin-list"
+        class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200"
+        >Admin</span
+      >
+    </ng-container>
+  </div>
+</nav>

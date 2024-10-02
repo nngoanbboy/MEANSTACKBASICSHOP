@@ -1,0 +1,3 @@
+# Backend .gitignore
+.env
+node_modules/

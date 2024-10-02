@@ -1,0 +1,6 @@
+<p class="text-3xl text-center font-semibold py-5">Welcome!</p>
+<div class="container grid grid-cols-3 mx-auto">
+  <ng-container *ngFor="let product of product">
+    <app-product-card [product]="product" />
+  </ng-container>
+</div>
